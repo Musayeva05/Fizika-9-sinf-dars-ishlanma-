@@ -50,7 +50,8 @@ details.topic{width:100%}
 summary.card{cursor:pointer;list-style:none;position:relative;padding-right:40px}
 summary.card::-webkit-details-marker,.author summary::-webkit-details-marker{display:none}
 summary.card::after{content:"▾";position:absolute;right:16px;top:50%;transform:translateY(-50%)}
-details[open]>summary.card::after{content:"▴"}
+details[open]>summary::-webkit-details-marker { display: none; }
+   
 .tbody{padding:6px 4px 4px}
 .author summary{list-style:none;cursor:pointer;display:inline-block}
 .author summary b{display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:6px 16px;margin:0}
