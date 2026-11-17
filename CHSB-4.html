@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fizika 9-sinf: 4-chorak testi</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--tx:#1b2333;--mu:#667085;--pr:#3558e6;--ok:#1a9a5b;--no:#d9423a;--bd:#d9deea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151d;--card:#1c212d;--tx:#e8ebf3;--mu:#9aa3b5;--pr:#6f8cff;--ok:#3ac47d;--no:#f06a62;--bd:#313849}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.45}
+.w{max-width:560px;margin:0 auto;padding:16px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px}
+h1{font-size:22px;margin:0 0 6px}
+p{color:var(--mu);margin:0 0 16px}
+label{display:block;font-size:14px;margin:12px 0 4px}
+input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font-size:16px}
+button{font:inherit;cursor:pointer}
+.b{width:100%;margin-top:18px;padding:14px;border:0;border-radius:12px;background:var(--pr);color:#fff;font-weight:600;font-size:16px}
+.b:disabled{opacity:.4;cursor:not-allowed}
+.o{display:block;width:100%;text-align:left;margin-top:10px;padding:13px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx)}
+.o.s{border-color:var(--pr);background:color-mix(in srgb,var(--pr) 15%,transparent)}
+.bar{height:6px;background:var(--bd);border-radius:4px;overflow:hidden;margin:8px 0 18px}
+.bar i{display:block;height:100%;background:var(--pr);width:0;transition:width .3s}
+.t{display:flex;justify-content:space-between;font-size:13px;color:var(--mu)}
+.q{font-size:18px;font-weight:600}
+.sc{font-size:44px;font-weight:700;text-align:center;margin:8px 0}
+.r{border-top:1px solid var(--bd);padding:10px 0;font-size:14px}
+.ok{color:var(--ok)}.no{color:var(--no)}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="w">
+
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:var(--pr);text-decoration:none;font-weight:600">← Mundarija</a>
+
+<div class="c" id="s1">
+<h1>🔍 Fizika: 4-chorak testi</h1>
+<p>9-sinf • To’la ichki qaytish, linzalar, optik asboblar, ko’z va ko’rish • 20 ta savol</p>
+<label for="ism">Ism</label><input id="ism" autocomplete="given-name" placeholder="Ismingiz">
+<label for="fam">Familiya</label><input id="fam" autocomplete="family-name" placeholder="Familiyangiz">
+<button class="b" id="go" disabled>Testni boshlash</button>
+</div>
+
+<div class="c hide" id="s2">
+<div class="t"><span id="nm"></span><span id="cnt"></span></div>
+<div class="bar"><i id="pg"></i></div>
+<div class="q" id="qt"></div>
+<div id="op"></div>
+<button class="b" id="nx" disabled>Keyingisi</button>
+</div>
+
+<div class="c hide" id="s3">
+<h1 id="rn"></h1>
+<div class="sc" id="rs"></div>
+<p id="rl" style="text-align:center"></p>
+<div id="rv"></div>
+<button class="b" id="again">Qayta boshlash</button>
+</div>
+
+</div>
+<script>
+const Q=[
+["To’la ichki qaytish qachon sodir bo’ladi?",["Yorug’lik optik zichroq muhitdan zichmas muhitga o’tganda va tushish burchagi chegaraviy burchakdan katta bo’lganda","Yorug’lik zichmas muhitdan zichroq muhitga o’tganda","Yorug’lik vakuumda tarqalganda","Tushish burchagi nolga teng bo’lganda"],0],
+["Chegaraviy burchak α₀ qaysi formula bilan topiladi? (n — nisbiy sindirish ko’rsatkichi)",["sin α₀ = n","sin α₀ = 1/n","cos α₀ = 1/n","tg α₀ = n"],1],
+["To’la ichki qaytish hodisasi qayerda qo’llaniladi?",["Elektr motorda","Optik tolali aloqa kabellarida","Termometrda","Barometrda"],1],
+["Linza nima?",["Ikki sferik sirt bilan chegaralangan shaffof jism","Tekis oyna","Qora rangli plastinka","Faqat shishadan yasalgan sharsimon idish"],0],
+["Qaysi linza yig’uvchi hisoblanadi?",["O’rtasi chetidan yupqa bo’lgan","O’rtasi chetidan qalin bo’lgan","Har ikki yuzasi botiq bo’lgan","Yuzasi tekis oyna kabi bo’lgan"],1],
+["Yig’uvchi linzaning bosh optik o’qiga parallel tushgan nurlar linzadan o’tgach...",["Bir-biridan uzoqlashadi","Fokusda to’planadi","Qaytib ketadi","Yutiladi"],1],
+["Linzaning optik kuchi qaysi formula bilan topiladi va qanday birlikda o’lchanadi?",["D = F, metr","D = 1/F, dioptriya","D = F², dioptriya","D = 1/F, nyuton"],1],
+["Fokus masofasi 0,5 m bo’lgan linzaning optik kuchi qancha?",["0,5 dptr","1 dptr","2 dptr","5 dptr"],2],
+["Optik kuchi 4 dptr bo’lgan linzaning fokus masofasi qancha?",["4 sm","25 sm","40 sm","2,5 sm"],1],
+["Yupqa linza formulasi qaysi javobda to’g’ri yozilgan? (d — predmetgacha, f — tasvirgacha masofa)",["1/F = 1/d + 1/f","F = d + f","1/F = d·f","F = d/f"],0],
+["Predmet yig’uvchi linzadan 2F dan uzoqda joylashgan. Tasvir qanday bo’ladi?",["Mavhum, to’g’ri, kattalashgan","Haqiqiy, teskari, kichraygan","Haqiqiy, to’g’ri, kattalashgan","Mavhum, teskari, kichraygan"],1],
+["Predmet yig’uvchi linza bilan uning fokusi orasida turibdi. Tasvir qanday bo’ladi?",["Haqiqiy, teskari, kichraygan","Haqiqiy, teskari, kattalashgan","Mavhum, to’g’ri, kattalashgan","Tasvir hosil bo’lmaydi"],2],
+["Sochuvchi linza hosil qiladigan tasvir qanday bo’ladi?",["Mavhum, to’g’ri, kichraygan","Haqiqiy, teskari, kattalashgan","Mavhum, to’g’ri, kattalashgan","Haqiqiy, to’g’ri, kichraygan"],0],
+["Predmet linzadan d = 10 sm masofada, tasvir f = 30 sm masofada hosil bo’ldi. Linzaning chiziqli kattalashtirishi qancha?",["1/3","3","20","0,3"],1],
+["Yorug’lik sindirish ko’rsatkichi n = 1,5 bo’lgan shishada qancha tezlik bilan tarqaladi? (c = 3·10⁸ m/s)",["4,5·10⁸ m/s","2·10⁸ m/s","1,5·10⁸ m/s","3·10⁸ m/s"],1],
+["Ko’zda buyumning tasviri qayerda hosil bo’ladi?",["Shox pardada","Qorachiqda","To’r pardada","Ko’z gavharining ichida"],2],
+["Yaqindan ko’ruvchi (miopiya) ko’zni to’g’rilash uchun qanday linzali ko’zoynak ishlatiladi?",["Yig’uvchi","Tekis shisha","Sochuvchi","Prizmali"],2],
+["Fotoapparatda hosil bo’ladigan tasvir qanday?",["Haqiqiy, teskari, kichraygan","Mavhum, to’g’ri, kattalashgan","Mavhum, teskari, kattalashgan","Haqiqiy, to’g’ri, kattalashgan"],0],
+["Ko’zning turli masofadagi buyumlarni aniq ko’rishga moslashishi (gavhar egriligining o’zgarishi) nima deyiladi?",["Diffraksiya","Akkomodatsiya","Dispersiya","Interferensiya"],1],
+["Geliotexnika nimaga asoslangan?",["Quyosh energiyasidan foydalanishga","Shamol energiyasidan foydalanishga","Atom yadrosi energiyasidan foydalanishga","Ko’mir yoqishga"],0]
+];
+const $=i=>document.getElementById(i);
+let L,i,A,name;
+const sh=a=>{a=[...a];for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a};
+function chk(){$("go").disabled=!($("ism").value.trim()&&$("fam").value.trim())}
+$("ism").oninput=$("fam").oninput=chk;
+$("go").onclick=()=>{name=$("ism").value.trim()+" "+$("fam").value.trim();
+ L=sh(Q).map(q=>{const o=q[1].map((t,k)=>({t,c:k===q[2]}));return{q:q[0],o:sh(o)}});
+ i=0;A=[];$("nm").textContent=name;$("s1").classList.add("hide");$("s2").classList.remove("hide");show()};
+function show(){const x=L[i];$("cnt").textContent=(i+1)+" / 20";$("pg").style.width=(i/20*100)+"%";
+ $("qt").textContent=x.q;$("nx").disabled=true;$("nx").textContent=i===19?"Yakunlash":"Keyingisi";
+ const box=$("op");box.innerHTML="";
+ x.o.forEach((o,k)=>{const b=document.createElement("button");b.className="o";b.textContent=String.fromCharCode(65+k)+") "+o.t;
+  b.onclick=()=>{[...box.children].forEach(c=>c.classList.remove("s"));b.classList.add("s");A[i]=k;$("nx").disabled=false};
+  box.appendChild(b)})}
+$("nx").onclick=()=>{if(i<19){i++;show()}else end()};
+function end(){let n=0,h="";
+ L.forEach((x,k)=>{const ok=x.o[A[k]].c;if(ok)n++;
+  if(!ok){const r=x.o.find(o=>o.c).t;h+='<div class="r"><b>'+(k+1)+'. '+x.q+'</b><br><span class="no">Sizning javobingiz: '+x.o[A[k]].t+'</span><br><span class="ok">To’g’ri javob: '+r+'</span></div>'}});
+ $("rn").textContent=name;$("rs").textContent=n+" / 20";
+ const p=n*5;$("rl").textContent="Natija: "+p+"% — "+(p>=85?"a’lo":p>=70?"yaxshi":p>=50?"qoniqarli":"takrorlash kerak");
+ $("rv").innerHTML=h?'<p style="margin-top:14px"><b>Xato javoblar:</b></p>'+h:'<p style="margin-top:14px" class="ok">Barcha javoblar to’g’ri! 🎉</p>';
+ $("s2").classList.add("hide");$("s3").classList.remove("hide")}
+$("again").onclick=()=>{$("s3").classList.add("hide");$("s1").classList.remove("hide");$("ism").value=$("fam").value="";chk()};
+</script>
+</body>
+</html>

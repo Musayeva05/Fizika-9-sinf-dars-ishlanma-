@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fizika 9-sinf: 2-chorak testi</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--tx:#1b2333;--mu:#667085;--pr:#3558e6;--ok:#1a9a5b;--no:#d9423a;--bd:#d9deea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151d;--card:#1c212d;--tx:#e8ebf3;--mu:#9aa3b5;--pr:#6f8cff;--ok:#3ac47d;--no:#f06a62;--bd:#313849}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.45}
+.w{max-width:560px;margin:0 auto;padding:16px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px}
+h1{font-size:22px;margin:0 0 6px}
+p{color:var(--mu);margin:0 0 16px}
+label{display:block;font-size:14px;margin:12px 0 4px}
+input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font-size:16px}
+button{font:inherit;cursor:pointer}
+.b{width:100%;margin-top:18px;padding:14px;border:0;border-radius:12px;background:var(--pr);color:#fff;font-weight:600;font-size:16px}
+.b:disabled{opacity:.4;cursor:not-allowed}
+.o{display:block;width:100%;text-align:left;margin-top:10px;padding:13px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx)}
+.o.s{border-color:var(--pr);background:color-mix(in srgb,var(--pr) 15%,transparent)}
+.bar{height:6px;background:var(--bd);border-radius:4px;overflow:hidden;margin:8px 0 18px}
+.bar i{display:block;height:100%;background:var(--pr);width:0;transition:width .3s}
+.t{display:flex;justify-content:space-between;font-size:13px;color:var(--mu)}
+.q{font-size:18px;font-weight:600}
+.sc{font-size:44px;font-weight:700;text-align:center;margin:8px 0}
+.r{border-top:1px solid var(--bd);padding:10px 0;font-size:14px}
+.ok{color:var(--ok)}.no{color:var(--no)}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="w">
+
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:var(--pr);text-decoration:none;font-weight:600">← Mundarija</a>
+
+<div class="c" id="s1">
+<h1>🔥 Fizika: 2-chorak testi</h1>
+<p>9-sinf • Issiqlik miqdori, termodinamika qonunlari, issiqlik dvigatellari • 20 ta savol</p>
+<label for="ism">Ism</label><input id="ism" autocomplete="given-name" placeholder="Ismingiz">
+<label for="fam">Familiya</label><input id="fam" autocomplete="family-name" placeholder="Familiyangiz">
+<button class="b" id="go" disabled>Testni boshlash</button>
+</div>
+
+<div class="c hide" id="s2">
+<div class="t"><span id="nm"></span><span id="cnt"></span></div>
+<div class="bar"><i id="pg"></i></div>
+<div class="q" id="qt"></div>
+<div id="op"></div>
+<button class="b" id="nx" disabled>Keyingisi</button>
+</div>
+
+<div class="c hide" id="s3">
+<h1 id="rn"></h1>
+<div class="sc" id="rs"></div>
+<p id="rl" style="text-align:center"></p>
+<div id="rv"></div>
+<button class="b" id="again">Qayta boshlash</button>
+</div>
+
+</div>
+<script>
+const Q=[
+["Issiqlik miqdorining SI sistemasidagi birligi qaysi?",["Vatt","Joul","Kelvin","Paskal"],1],
+["Jismni isitish uchun zarur bo’lgan issiqlik miqdori qaysi formula bilan topiladi?",["Q = c·m·Δt","Q = q·m","Q = m/(c·Δt)","Q = c·Δt/m"],0],
+["Moddaning solishtirma issiqlik sig’imi nimani ko’rsatadi?",["1 kg moddani to’la yoqish uchun ajraladigan issiqlikni","1 kg moddani 1 °C ga isitish uchun zarur issiqlik miqdorini","Jismning umumiy ichki energiyasini","Moddaning erish temperaturasini"],1],
+["Solishtirma issiqlik sig’imi 4200 J/(kg·°C) bo’lgan 2 kg suvni 10 °C ga isitish uchun qancha issiqlik kerak?",["8,4 kJ","42 kJ","84 kJ","840 kJ"],2],
+["Mis bo’lakning massasi 0,5 kg, solishtirma issiqlik sig’imi 400 J/(kg·°C). U 20 °C dan 120 °C gacha isitilsa, qancha issiqlik oladi?",["20 kJ","24 kJ","4 kJ","200 kJ"],0],
+["Issiqlik almashinuvi jarayonida issiqlik balansi tenglamasi qanday yoziladi?",["Q(olingan) = Q(berilgan)","Q(olingan) = 2·Q(berilgan)","Q(olingan) + Q(berilgan) = 100 J","Q(olingan) < Q(berilgan)"],0],
+["Yoqilg’i to’la yonganda ajraladigan issiqlik miqdori qaysi formula bilan topiladi?",["Q = c·m·Δt","Q = q·m","Q = A·t","Q = U·I·t"],1],
+["Yoqilg’ining solishtirma yonish issiqligi q = 3·10⁷ J/kg. 2 kg yoqilg’i to’la yonganda qancha issiqlik ajraladi?",["1,5·10⁷ J","3·10⁷ J","6·10⁷ J","6·10⁴ J"],2],
+["Yoqilg’ining solishtirma yonish issiqligining birligi qaysi?",["J/(kg·°C)","J/kg","kg/J","W/kg"],1],
+["Termodinamikaning birinchi qonuni qaysi javobda to’g’ri yozilgan?",["Q = ΔU + A","Q = ΔU − A·2","A = Q + ΔU","ΔU = Q·A"],0],
+["Gazga 500 J issiqlik berildi va gaz 200 J ish bajardi. Gazning ichki energiyasi qanchaga o’zgargan?",["700 J ga ortgan","300 J ga ortgan","300 J ga kamaygan","200 J ga ortgan"],1],
+["Izoxorik jarayonda gazga berilgan issiqlik nimaga sarflanadi?",["Faqat ish bajarishga","Ham ish bajarishga, ham ichki energiyani oshirishga","Faqat ichki energiyani o’zgartirishga","Hech nimaga sarflanmaydi"],2],
+["Adiabatik jarayonda nima sodir bo’lmaydi?",["Gaz hajmi o’zgarmaydi","Atrof muhit bilan issiqlik almashinuvi bo’lmaydi","Gaz ish bajarmaydi","Temperatura o’zgarmaydi"],1],
+["Termodinamikaning ikkinchi qonuniga (Klauzius) ko’ra...",["Issiqlik o’z-o’zidan sovuq jismdan issiq jismga o’tmaydi","Issiqlik hamma vaqt sovuq jismdan issiq jismga o’tadi","Energiya yo’qoladi","Ish doimo issiqlikka teng bo’ladi"],0],
+["Quyidagilardan qaysi biri qaytmas jarayonga misol bo’ladi?",["Ideal tebranuvchi mayatnikning ishqalanishsiz tebranishi","Issiq jismdan sovuq jismga issiqlik o’tishi","Sayyoraning ideal doiraviy orbitada aylanishi","Vakuumdagi jismning tekis harakati"],1],
+["Issiqlik dvigatelining asosiy qismlari qaysi javobda to’g’ri keltirilgan?",["Isitgich, ishchi jism, sovitgich","Isitgich, transformator, kondensator","Sovitgich, reostat, ishchi jism","Ishchi jism, ampermetr, isitgich"],0],
+["Issiqlik dvigatelining foydali ish koeffitsiyenti (FIK) qaysi formula bilan topiladi?",["η = Q₁/A · 100%","η = A/Q₁ · 100%","η = Q₂/Q₁ · 100%","η = A·Q₁ · 100%"],1],
+["Dvigatel isitgichdan 500 J issiqlik oldi va sovitgichga 400 J berdi. Uning FIKi qancha?",["80 %","25 %","20 %","90 %"],2],
+["To’rt taktli ichki yonuv dvigatelida taktlar qaysi tartibda keladi?",["Siqish, so’rish, chiqarish, ishchi yo’l","So’rish, siqish, ishchi yo’l (kengayish), chiqarish","Chiqarish, so’rish, ishchi yo’l, siqish","Ishchi yo’l, so’rish, chiqarish, siqish"],1],
+["Nima uchun issiqlik dvigatelining FIKi hech qachon 100 % bo’la olmaydi?",["Chunki ishchi jism juda issiq bo’ladi","Chunki olingan issiqlikning bir qismi albatta sovitgichga beriladi","Chunki dvigatel massasi katta bo’ladi","Chunki yoqilg’i to’liq yonmaydi, faqat shu sababli"],1]
+];
+const $=i=>document.getElementById(i);
+let L,i,A,name;
+const sh=a=>{a=[...a];for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a};
+function chk(){$("go").disabled=!($("ism").value.trim()&&$("fam").value.trim())}
+$("ism").oninput=$("fam").oninput=chk;
+$("go").onclick=()=>{name=$("ism").value.trim()+" "+$("fam").value.trim();
+ L=sh(Q).map(q=>{const o=q[1].map((t,k)=>({t,c:k===q[2]}));return{q:q[0],o:sh(o)}});
+ i=0;A=[];$("nm").textContent=name;$("s1").classList.add("hide");$("s2").classList.remove("hide");show()};
+function show(){const x=L[i];$("cnt").textContent=(i+1)+" / 20";$("pg").style.width=(i/20*100)+"%";
+ $("qt").textContent=x.q;$("nx").disabled=true;$("nx").textContent=i===19?"Yakunlash":"Keyingisi";
+ const box=$("op");box.innerHTML="";
+ x.o.forEach((o,k)=>{const b=document.createElement("button");b.className="o";b.textContent=String.fromCharCode(65+k)+") "+o.t;
+  b.onclick=()=>{[...box.children].forEach(c=>c.classList.remove("s"));b.classList.add("s");A[i]=k;$("nx").disabled=false};
+  box.appendChild(b)})}
+$("nx").onclick=()=>{if(i<19){i++;show()}else end()};
+function end(){let n=0,h="";
+ L.forEach((x,k)=>{const ok=x.o[A[k]].c;if(ok)n++;
+  if(!ok){const r=x.o.find(o=>o.c).t;h+='<div class="r"><b>'+(k+1)+'. '+x.q+'</b><br><span class="no">Sizning javobingiz: '+x.o[A[k]].t+'</span><br><span class="ok">To’g’ri javob: '+r+'</span></div>'}});
+ $("rn").textContent=name;$("rs").textContent=n+" / 20";
+ const p=n*5;$("rl").textContent="Natija: "+p+"% — "+(p>=85?"a’lo":p>=70?"yaxshi":p>=50?"qoniqarli":"takrorlash kerak");
+ $("rv").innerHTML=h?'<p style="margin-top:14px"><b>Xato javoblar:</b></p>'+h:'<p style="margin-top:14px" class="ok">Barcha javoblar to’g’ri! 🎉</p>';
+ $("s2").classList.add("hide");$("s3").classList.remove("hide")}
+$("again").onclick=()=>{$("s3").classList.add("hide");$("s1").classList.remove("hide");$("ism").value=$("fam").value="";chk()};
+</script>
+</body>
+</html>
